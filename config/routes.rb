@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :restaurants
-  get 'pages/about'
+  get '/about' => 'pages#about'
 
-  get 'pages/contact'
+  get 'contact' => 'pages#contact'
 
   root 'restaurants#index'
 
