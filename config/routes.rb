@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :reviews, execpt: [:show, :index]
   devise_for :users
-  resources :restaurants
+  resources :restaurants do
+    resources :reviews, execpt: [:show, :index]
+  end
   get '/about' => 'pages#about'
 
   get 'contact' => 'pages#contact'
